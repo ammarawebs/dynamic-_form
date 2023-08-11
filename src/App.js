@@ -49,7 +49,6 @@ function App() {
 
     set_n(n + 1);
 
-    // console.log([{...form_details}])
     
 
     
@@ -59,13 +58,11 @@ function App() {
 
     e.preventDefault()
 
-    console.log("clicked");
-
     const array_form_new_details = {...form_details, id: new Date().getTime().toString() }
-    //
+
      set_form_details_array([...form_details_array , array_form_new_details])
 
-    //  console.log(form_details_array)
+  
     object_array.map((curElem, i)=>{
      
 
@@ -80,14 +77,12 @@ function App() {
 
   const delete_input_form = (e) =>{
 
-    console.log(e.target.name)
-
     delete form_details['firstname'+e.target.name]
     delete form_details['lastname'+e.target.name]
     delete form_details['email'+e.target.name]
     delete form_details['password'+e.target.name]
 
-    console.log(form_details)
+
 
     set_object_array((oldItems)=>{
       return oldItems.slice(0, -1)
@@ -171,10 +166,9 @@ function App() {
 
   useEffect(() => {
 
-    console.log(error);
     console.log(form_details);
     console.log(form_details_array)
-    console.log(object_array.length)
+    
   }, [form_details, object_array, n, error,form_details_array ,delete_input_form]);
 
   return (
